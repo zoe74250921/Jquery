@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(function () {
+		function pro() {
+			var now = new Date();
+			$("#now").html(now)
+		}
+		
+		setInterval(pro,1000)
+	})
+</script>
+</head>
+<body>
+	현재시간: <span id="now"></span>
+</body>
+</html>

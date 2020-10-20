@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("button").click(function () {
+		$.ajax("/info.do",{success:function(member){
+			//$("span").html(r);
+			//var member = eval("("+r+")");
+			var p1 = $("<p></p>").html(member.name);
+			var p2 = $("<p></p>").html(member.age);
+			var p3 = $("<p></p>").html(member.addr);
+			$("span").append(p1,p2,p3);
+		}});
+	});
+});
+</script>
+</head>
+<body>
+	<hr>
+	회원정보:<span></span>
+	<hr>
+	<button>회원정보 읽어오기</button>
+</body>
+</html>

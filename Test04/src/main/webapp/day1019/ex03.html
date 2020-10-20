@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	
+	var xml = "<members>";
+	xml += "<member>";
+	xml += "<name>져니</name>";
+	xml += "<age>27</age>";
+	xml += "</member>";
+	xml += "<member>";
+	xml += "<name>효니</name>";
+	xml += "<age>25</age>";
+	xml += "</member>";
+	xml += "<member>";
+	xml += "<name>망갱</name>";
+	xml += "<age>28</age>";
+	xml += "</member>";
+	xml += "</members>";
+	
+	//alert(xml);
+	var xmlDoc = $.parseXML(xml);
+	//alert(xmlDoc);
+	
+	var arr = $(xmlDoc).find("member");
+	$.each(arr, function (idx, member) {
+		var name = $(this).find("name").text();
+		var age = $(this).find("age").text();
+		
+		var h1 = $("<h1></h1>").html(name);
+		var p = $("<p></p>").html(age);
+		var div = $("<div></div>");
+		$(div).append(h1,p);
+		$("body").append(div);
+		
+		
+	});
+});
+</script>
+</head>
+<body>
+	
+</body>
+</html>

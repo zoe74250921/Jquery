@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var pro = function () {
+		var str = "";
+		str += "<ul>";
+		str += "<li>돈까스</li>";
+		str += "<li>칼국수</li>";
+		str += "<li>햄버거</li>";
+		str += "<li>피자</li>";
+		str += "<li>김밥</li>";
+		str += "</ul>";
+		
+		document.getElementById("result").innerHTML = str;
+	}
+</script>
+</head>
+<body>
+<h2>직장인이 선호하는 점심 메뉴 Top5</h2>
+<div id="result"></div>
+<button onclick="pro()">동적 노드 추가</button>
+</body>
+</html>

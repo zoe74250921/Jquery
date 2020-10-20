@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	var book = {
+			bookid: 9,
+			bookname: "올림픽 이야기",
+			publisher: "삼성당",
+			price: "7500"
+	}
+	
+	$(function () {
+		$("#btn").click(function () {
+			var tr = $("<tr></tr>")
+			$.each(book, function (idx) {
+				var td = $("<td></td>").html(book[idx])
+				$(tr).append(td)
+			})
+			$("#list").append(tr)
+		})
+	})
+	
+	
+</script>
+</head>
+<body>
+	<table id="list" border="1" width="80%">
+		<tr>
+			<td>도서번호</td>
+			<td>도서명</td>
+			<td>출판사</td>
+			<td>가격</td>
+		</tr>
+	</table>
+	<hr>
+	<button id="btn">도서정보 확인</button>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	var book = {
+			bookid: 9,
+			bookname: "올림픽 이야기",
+			publisher: "삼성당",
+			price: "7500"
+	}
+	
+	$(function () {
+		$("#btn").click(function () {
+			$("#bookid").html(book.bookid);
+			$("#bookname").html(book.bookname);
+			$("#publisher").html(book.publisher);
+			$("#price").html(book.price);
+		})
+	})
+	
+	
+</script>
+</head>
+<body>
+	도서번호:	<span id="bookid"></span> <br>
+	도서명: <span id="bookname"></span>	<br>
+	출판사: <span id="publisher"></span>	<br>	
+	도서가격: <span id="price"></span>	<br>
+	<hr>
+	<button id="btn">도서정보 확인</button>
+</body>
+</html>

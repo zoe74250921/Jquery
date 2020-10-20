@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.inner_item{
+	padding: 10px;
+	display: inline;
+	float: left;
+}
+
+.item{
+	margin: 10px;
+	border: solid 3px pink;
+	border-radius: 15px;
+	width: 400px;
+	height: 350px;
+}
+
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	var arr = [
+		{no:1, name:"태태1", handsome:10000, fname:"v1.jpg"},
+		{no:2, name:"태태2", handsome:10000, fname:"v2.jpg"},
+		{no:3, name:"태태3", handsome:10000, fname:"v3.jpg"},
+		{no:4, name:"태태4", handsome:10000, fname:"v4.jpg"},
+		{no:5, name:"태태5", handsome:10000, fname:"v5.jpg"},
+		{no:6, name:"태태6", handsome:10000, fname:"v6.jpg"},
+		{no:7, name:"태태7", handsome:10000, fname:"v7.jpg"},
+		{no:8, name:"태태8", handsome:10000, fname:"v8.jpg"},
+		{no:9, name:"태태9", handsome:10000, fname:"v9.jpg"},
+		{no:10, name:"태태10", handsome:10000, fname:"v10.jpg"},
+		{no:11, name:"태태11", handsome:10000, fname:"v11.jpg"},
+		{no:12, name:"태태12", handsome:10000, fname:"v12.jpg"},
+		{no:13, name:"태태13", handsome:10000, fname:"v13.jpg"},
+		{no:14, name:"태태14", handsome:10000, fname:"v14.jpg"},
+		{no:15, name:"태태15", handsome:10000, fname:"v15.jpg"},
+		{no:16, name:"태태16", handsome:10000, fname:"v16.jpg"},
+		{no:17, name:"태태17", handsome:10000, fname:"v17.jpg"},
+		{no:18, name:"태태18", handsome:10000, fname:"v18.jpg"},
+		{no:19, name:"태태19", handsome:10000, fname:"v19.jpg"},
+		{no:20, name:"태태20", handsome:10000, fname:"v20.jpg"}
+		];
+	
+	var listTT = function () {
+	
+		$.each(arr,function(idx,item){
+			var div = $("<div></div>").addClass("item");
+			var span1 = $("<span></span>").addClass("inner_item");
+			var span2 = $("<span></span>");
+			
+			var img = $("<img/>").attr({
+				src:"../"+item.fname,
+				width:200
+			});
+			
+			$(span1).append(img);
+			
+			var p1 = $("<p></p>").html("작품번호: "+item.no);
+			var p2 = $("<p></p>").html("작품이름: "+item.name);
+			var p3 = $("<p></p>").html("매력지수: "+item.handsome);
+			
+			$(span2).append(p1,p2,p3);
+			$(div).append(span1,span2);
+			$("body").append(div);
+		});
+	}
+	
+	listTT();
+	
+	$(window).scroll(function () {
+		var scrollHeight = $(window).scrollTop() + $(window).height();
+		var documentHeight = $(document).height();
+		
+		if (scrollHeight + 200 >= documentHeight) {
+			listTT();
+		}
+		
+	})
+	
+});
+</script>
+</head>
+<body>
+	
+</body>
+</html>

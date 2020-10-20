@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(function () {
+		$("#btsok").click(function () {
+			var kor = eval($("#kor").val());
+			var kor = eval($("#eng").val());
+			var math = eval($("#math").val());
+			
+			var tot = kor + eng + math;
+			var avg = tot/3;
+			
+			var re = "";
+			if (avg>=90) {
+				re ="수";
+			}else if (avg>=80) {
+				re = "우";
+			}else if (avg>=70) {
+				re = "양";
+			}else {
+				re = "가";
+			}
+			
+			$("#tot").html(tot);
+			$("#avg").html(avg);
+			$("#re").html(re);
+		});
+	});
+</script>
+</head>
+<body>
+	이름: <input type="text"><br>
+	국어: <input type="text" id="kor"><br>
+	영어: <input type="text" id="eng"><br>
+	수학: <input type="text" id="math"><br>
+	<button id="btsok">확인</button><br>
+	총점: <span id="tot"></span><br>
+	평균: <span id="avg"></span><br>
+	결과: <span id="re"></span><br>
+	
+</body>
+</html>

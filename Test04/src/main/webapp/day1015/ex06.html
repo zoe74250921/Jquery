@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function pro(){
+	alert("OK");
+}
+
+window.onload = function(){
+	var a = document.getElementById("a");
+	a.onclick = pro;
+}
+
+</script>
+</head>
+<body>
+	<h1 onclick="alert('hello')">눌러바</h1>
+	<h1 onclick="var a=10;alert(a)">눌러바</h1>
+	<h1 onclick="pro()">눌러바</h1>
+	<h1 id="a">눌러바</h1>
+</body>
+</html>

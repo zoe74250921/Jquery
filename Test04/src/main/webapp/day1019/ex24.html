@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$(document).on("click","li",function(){
+		var str = $(this).text();
+		alert(str);
+	});
+	
+	$("button").click(function () {
+		var li = $("<li></li>").html("딸기");
+		$("ul").append(li);
+	});
+});
+</script>
+</head>
+<body>
+	<ul>
+		<li>사과</li>
+		<li>딸기</li>
+	</ul>
+	<button>추가</button>
+</body>
+</html>

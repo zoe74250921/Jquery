@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#btnLike").click(function () {
+			$("*").css("color", "black");
+			$(".like").css("color", "blue");
+		});
+		$("#btnAnimal").click(function () {
+			$("*").css("color", "black");
+			$(".animal").css("color", "blue");
+		});
+		$("#btnLA").click(function () {
+			$("*").css("color", "black");
+			$(".like.animal").css("color", "blue");
+		});
+		$("#btnLaA").click(function () {
+			$("*").css("color", "black");
+			$(".like, .animal").css("color", "blue");
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>사과</h1>
+	<h1>포도</h1>
+	<h1>수박</h1>
+	<h1 class="animal like">고양이</h1>
+	<h1 class="like">딸기</h1>
+	<h1 class="animal">코끼리</h1>
+	<h1 class="like">돈</h1>
+	<h1 class="like">가족</h1>
+	<h1 class="animal">원숭이</h1>
+	
+	<button id="btnLaA">내가 좋아하는 것들과 동물</button>
+	<button id="btnLike">내가 좋아하는 것들</button>
+	<button id="btnLA">내가 좋아하는 동물</button>
+	<button id="btnAnimal">동물</button>
+</body>
+</html>

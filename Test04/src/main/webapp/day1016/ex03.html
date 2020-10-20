@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("h1").mouseover(function () {
+		$("#re").html("마우스 놀러와따~~~")
+	});
+	$("h1").mouseleave(function () {
+		$("#re").html("마우스 나가따~~~")
+	});
+});
+</script>
+</head>
+<body>
+	<h1 onmouseover="" onmouseleave="">죠니</h1>
+	<span id="re"></span>
+</body>
+</html>

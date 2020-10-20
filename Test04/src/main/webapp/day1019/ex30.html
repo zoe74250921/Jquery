@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+* {
+   margin: 0px;
+   padding: 0px;
+}
+
+ul{
+	list-style: none;
+}
+
+img{
+	width: 500px;
+}
+
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../jquery.innerfade.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#a").innerfade({
+		animationtype:"fade",
+		speed:750,
+		timeout:2000,
+		type:"random",
+		containerheight:"350px"
+	});
+});
+</script>
+</head>
+<body>
+	<ul id="a">
+		<li><img src="../v1.jpg"></li>
+		<li><img src="../v2.jpg"></li>
+		<li><img src="../v3.jpg"></li>
+		<li><img src="../v4.jpg"></li>
+		<li><img src="../v5.jpg"></li>
+	</ul>
+</body>
+</html>

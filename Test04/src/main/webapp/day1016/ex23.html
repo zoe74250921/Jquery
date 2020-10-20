@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	
+	var selSpan;
+	
+	var arr = [
+		{name:"뚜왕", fname:"cat.jpg"},
+		{name:"왜조래", fname:"cat1.jpg"},
+		{name:"띠용", fname:"cat2.jpg"},
+		{name:"오호리", fname:"cat3.jpg"},
+		{name:"또잉", fname:"cat4.jpg"},];
+	
+	$.each(arr,function(idx,item){
+		var span = $("<span></span>").html(item.name);
+		$(span).attr("idx",idx);
+		$(span).css("margin","20px")
+		$("#menu").append(span);
+		
+		$(span).click(function () {
+			var idx = $(this).attr("idx");
+			var fname = arr[idx].fname;
+			$("img").attr("src","../"+fname);
+			$(this).css("background-color","red");
+			selSpan = $(this);
+		});
+		
+		$("span").mouseover(function () {
+			$(this).css("background-color","pink");
+		});
+		
+		$("span").mouseleave(function () {
+			if ($(tihs)!=selSpan) {
+				$(this).css("background-color","white");
+			}
+		});
+		
+	});
+	
+});
+</script>
+</head>
+<body>
+	<div id="menu"></div>
+	<hr>
+	<img src="../cat.jpg" width="500" height="500">
+</body>
+</html>

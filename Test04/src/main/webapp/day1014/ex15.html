@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function () {
+	var sun = document.getElementById("sun");
+	var moon = document.getElementById("moon");
+	var earth = document.getElementById("earth");
+	
+	sun.style.position = "absolute";
+	moon.style.position = "absolute";
+	earth.style.position = "absolute";
+	
+	sun.style.left = 350+"px";
+	sun.style.top = 300+"px";
+	
+	var earthAngle = 0;
+	var moonAngle = 0;
+	
+	setInterval(function () {
+		var earthLeft = 350+150*Math.cos(earthAngle);
+		var earthTop = 300+150*Math.sin(earthAngle);
+		
+		var moonLeft = earthLeft+50*Math.cos(moonAngle);
+		var moonTop = earthTop+50*Math.sin(moonAngle);
+		
+		earth.style.left = earthLeft+"px";
+		earth.style.top = earthTop+"px";
+		
+		moon.style.left = moonLeft+"px";
+		moon.style.top = moonTop+"px";
+		
+		earthAngle += 0.1;
+		moonAngle += 0.2;
+		
+
+		
+	},1000/20);
+	
+}
+</script>
+</head>
+<body>
+<img id="sun" src="../sun.png" width="50" height="50">
+<img id="moon" src="../moon.png" width="30" height="30">
+<img id="earth" src="../earth.png" width="50" height="50">
+</body>
+</html>

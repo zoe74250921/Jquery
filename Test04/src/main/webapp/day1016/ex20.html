@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	var arr = ["사과","포도","수박"];
+	/*$.each(arr,function(idx,item){
+		
+	});*/
+	
+	$(arr).each(function (idx,item) {
+		//var li = $("<li></li>").html(item);
+		var li = $("<li></li>").html(arr[idx]);
+		$("ul").append(li);
+	})
+});
+</script>
+</head>
+<body>
+	<ul></ul>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	img{
+		width: 50px;
+		
+		margin: 10px;
+	}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../jquery.innerfade.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("img").hover(function(){
+		$(this).animate({width:100,height:100},'slow')
+	},function(){
+		$(this).animate({width:50,height:50},'slow')
+	});
+});
+</script>
+</head>
+<body>
+	<img src="../v6.jpg">
+	<img src="../v7.jpg">
+	<img src="../v8.jpg">
+	<img src="../v9.jpg">
+	<img src="../v10.jpg">
+</body>
+</html>

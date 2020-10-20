@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.min.css">
+<style type="text/css">
+	.active{
+		top: -32px;
+	}
+
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+	
+	.animation_canvas{
+		position: relative;
+		width: 600px;
+		height: 400px;
+		overflow: hidden;
+	}
+	
+	.slider_panel{
+		width: 3000px;
+		position: relative;
+	}
+	.slider_image {
+		float: left;
+		width: 600px;
+		height: 400px;
+	}
+	
+	.slider_text_panel{
+		position: absolute;
+		top: 200px;
+		left: 50px;
+	}
+	.slider_text{
+		position: absolute;
+		width: 250px;
+		height: 150px;
+		color: white;
+	}
+	
+	.control_panel{
+		position: absolute;
+		top: 380px;
+		overflow: hidden;
+		left: 270px;
+		height: 13px;
+	}
+	
+	.control_button{
+		width: 12px;
+		height: 46px;
+		position: relative;
+		float: left;
+		cursor: pointer;
+		background: url("../point_button.png")
+	}
+	.control_button:hover {
+		top: -16px;
+	}
+	
+	.control_button:active {
+		top: -31px;
+	}
+	h1{
+		font-size: 20px;
+	}
+	p{
+		font-size: 11px;
+	}
+
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="../jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	$(".slider_text").css("left",-300).each(function(index) {
+		$(this).attr("data-index", index);
+	});
+	
+	$(".control_button").each(function(index) {
+		$(this).attr("data-index", index);
+	});
+	
+	function moveSlider(index) {
+		var x = -(index*600);
+		$(".slider_panel").animate({left:x},'slow');
+		
+		$(".control_button[data-index="+index+"]").addClass("active");
+		$(".control_button[data-index!="+index+"]").removeClass("active");
+		
+		$(".slider_text[data-index="+index+"]").show().animate({left:0},'slow');
+		$(".slider_text[data-index!="+index+"]").hide('slow',function(){
+			$(this).css('left',-300);
+		});
+	}
+	
+	$(".control_button").click(function () {
+		var index = $(this).attr("data-index");
+		moveSlider(index);
+	});
+	
+	var n = Math.round(Math.randon()*4);
+	moveSlider(n);
+});
+</script>
+</head>
+<body>
+	<div class="animation_canvas">
+		<div class="slider_panel">
+			<img class ="slider_image" src="../news01.JPG"/>
+			<img class ="slider_image" src="../news02.JPG"/>
+			<img class ="slider_image" src="../news03.JPG"/>
+			<img class ="slider_image" src="../news04.JPG"/>
+			<img class ="slider_image" src="../news05.JPG"/>
+		</div>
+		
+		<div class="slider_text_panel">
+			<div class="slider_text">
+				<h1>방탄소년단의 새로운 이야기 'BE'</h1>
+				<p>지난 8월 21일 발매한 디스코 팝 장르의 '다이너마이트 Dynamite'로 전 세계에 희망의 메시지와 활력을 전파한 방탄소년단은 이번 새 앨범 'BE'에서는 자신들의 진솔한 이야기를 담은 음악으로 세상을 향해 위로를 전한다. 'BE'는 11월 20일 오후 2시 전 세계에 동시 공개되며, 방탄소년단은 음악뿐만 아니라 콘셉트와 구성, 디자인에 이르기까지 앨범 제작 전반에 적극 참여했다.</p>
+			</div>
+			
+			<div class="slider_text">
+				<h1>'2020 빌보드 뮤직 어워드' 방탄소년단, '다이너마이트' 공연에 담긴 특별한 의미</h1>
+				<p>그룹 방탄소년단이 '2020 빌보드 뮤직 어워드2020 Billboard Music Awards, 이하 '2020 BBMAs')'에서 톱 소셜 아티스트(Top Social Artist) 부문에 이름을 올리며 4년 연속 수상한 가운데 경쾌한 '다이너마이트'로 전 세계 음악 팬들에게 에너지를 선사했다.</p>
+			</div>
+				
+			<div class="slider_text">
+				<h1>방탄소년단 'Dynamite' MV 5억 뷰 돌파…통산 10번째 5억 기록 [공식]</h1>
+				<p>그룹 방탄소년단의 '다이너마이트(Dynamite)' 뮤직비디오가 5억뷰를 돌파했다. 지난 8월 21일 오후 1시 공개된 방탄소년단의 디지털 싱글 ‘Dynamite’ 뮤직비디오는 10월 20일 오전 9시 6분경 유튜브 조회수 5억 건을 넘었다. 이로써 방탄소년단은 통산 10번째 5억뷰 뮤직비디오를 보유하게 됐다.</p>
+			</div>
+			
+			<div class="slider_text">
+				<h1>BTS ‘새비지 러브’ 리믹스로 두번째 빌보드 1위 대기록</h1>
+				<p>그룹 방탄소년단(BTS)이 피처링에 참여한 '새비지 러브'(Savage Love) 리믹스 버전이 미국 빌보드 메인 싱글 차트인 '핫 100' 1위에 올랐다. 방탄소년단은 이로써 '다이너마이트'에 이어 두 번째 핫 100 1위 곡을 내게 됐다. 더불어 이번 주 핫 100 차트에서는 '새비지 러브' 리믹스에 이어 '다이너마이트'가 2위를 차지해 방탄소년단 곡이 나란히 1·2위에 오르게 됐다.</p>
+			</div>
+			
+			<div class="slider_text">
+				<h1>방탄소년단 '다이너마이트' 빌보드 핫100 5위 '롱런'[공식]</h1>
+				<p>톱 아이돌그룹 방탄소년단(BTS, RM 진 지민 제이홉 슈가 뷔 정국) 신곡 '다이너마이트'(Dynamite)가 빌보드 핫100 차트 5위에 오르며 최상위권을 유지했다. '다이너마이트'는 2020년 9월 5일 자 빌보드 핫100 차트에서 처음으로 1위에 오른 이후 2주차 1위, 3주차 2위, 4주차 2위, 5주차 1위, 6주차 2위, 7주차 2위 등의 기록으로 최고의 영향력을 입증했다.</p>
+			</div>
+			
+		</div>
+		
+		<div class="control_panel">
+			<div class="control_button"></div>
+			<div class="control_button"></div>
+			<div class="control_button"></div>
+			<div class="control_button"></div>
+			<div class="control_button"></div>
+		</div>
+	</div>
+	
+</body>
+</html>

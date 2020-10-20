@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	var str = "<h1>Hello~~</h1>";
+	
+	$("#btnHtml").click(function () {
+		$("div").html(str);
+	});
+	
+	$("#btnText").click(function () {
+		$("div").text(str);
+	});
+});
+</script>
+</head>
+<body>
+	<div></div>
+	<button id="btnHtml">html로 설정</button>
+	<button id="btnText">text로 설정</button>
+</body>
+</html>

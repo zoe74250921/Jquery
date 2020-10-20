@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	//var h1 = $("<h1>도롤리</h1>");
+	//$("div").append(h1);
+	
+	var arr = ["우리","애긔","줄리"];
+	$("div").append(function (idx) {
+		var h1 = $("<h1></h1>").html(arr[idx]);
+		return h1;
+	});
+});
+</script>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

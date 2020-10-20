@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(function () {
+		$("#btnAdd").click(function () {
+			var tr = $("<tr></tr>");
+			var tot = 0;
+			var avg = 0;
+			$("input").each(function (idx) {
+				if (idx>0) {
+					tot += eval($(this).val());
+				}
+				var str = $(this).val();
+				var td = $("<td></td>").html(str);
+				$(tr).append(td);
+				//$(tr).append($("<td></td>").html($(this).val()));
+			});
+			var avg = tot/3;
+			$(tr).append($("<td></td>").html(tot));
+			$(tr).append($("<td></td>").html(avg));
+			$("#tb").append(tr);
+		});
+	});
+</script>
+</head>
+<body>
+	이름 : <input type="text"><br>
+	국어 : <input type="text"><br>
+	영어 : <input type="text"><br>
+	수학 : <input type="text"><br>
+	<button id="btnAdd">추가</button>
+	<table id="tb" border="1" width="80%">
+		<tr>
+			<th>이름</th>
+			<th>국어</th>
+			<th>영어</th>
+			<th>수학</th>
+			<th>총점</th>
+			<th>평균</th>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function(){
+		var btn_apple = document.getElementById("btn_apple");
+		var btn_grapes = document.getElementById("btn_grapes");
+		var counter_apple = document.getElementById("counter_apple");
+		var counter_grapes = document.getElementById("counter_grapes");
+		
+		btn_apple.onclick = function(){
+			counter_apple.innerHTML =  
+				eval(counter_apple.innerHTML) + 1;
+		/*	
+			counter_grapes.innerHTML = 
+				eval(counter_grapes.innerHTML) + 1;
+		*/	
+			btn_grapes.onclick();
+		}
+		
+		btn_grapes.onclick = function(){
+			counter_grapes.innerHTML = 
+				eval(counter_grapes.innerHTML) + 1;
+		}
+		
+	}
+
+	
+</script>
+</head>
+<body>
+	<button id="btn_apple">사과</button>
+	<button id="btn_grapes">포도</button>
+	<h1>사과의 수: <span id="counter_apple">0</span></h1>
+	<h1>포도의 수: <span id="counter_grapes">0</span></h1>
+	
+</body>
+</html>

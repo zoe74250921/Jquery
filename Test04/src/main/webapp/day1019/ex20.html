@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("h1").click(function () {
+		$(this).html($(this).html()+"★");
+	});
+	
+	setInterval(function () {
+		$("h1").last().trigger("click");
+	},1000);
+});
+</script>
+</head>
+<body>
+	<h1>반짝반짝</h1>
+	<h1>작은별~</h1>
+</body>
+</html>

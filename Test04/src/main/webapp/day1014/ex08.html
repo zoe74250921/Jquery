@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(function () {
+		$("#btnAdd").click(function () {
+			var tr = $("<tr></tr>");
+			var name = $("<td></td>").html($("#name").val());
+			var kor = $("<td></td>").html($("#kor").val());
+			var eng = $("<td></td>").html($("#eng").val());
+			var math = $("<td></td>").html($("#math").val());
+			var tot = $("<td></td>").html(eval($("#kor").val())+eval($("#eng").val())+eval($("#math").val()));
+			var avg = $("<td></td>").html((eval($("#kor").val())+eval($("#eng").val())+eval($("#math").val()))/3);
+			$(tr).append(name,kor,eng,math,tot,avg);
+			$("#tb").append(tr);
+			
+			/*
+			var tr = $("<tr></tr>");
+			var row = {name:$("#name").val(),kor:$("#kor").val(),eng:$("#eng").val(),math:$("#math").val()};
+			var tot = Number(row.kor)+Number(row.eng)+Number(row.math);
+			var avg = tot/3;
+			row.tot = tot;
+			row.avg = avg;
+			$.each(row,function(idx,v){
+				var td = $("<td></td>").text(v);
+				$(tr).append(td);
+			});
+			$("#tb").append(tr);
+			*/
+		});
+	});
+</script>
+</head>
+<body>
+	이름 : <input type="text" id="name"><br>
+	국어 : <input type="text" id="kor"><br>
+	영어 : <input type="text" id="eng"><br>
+	수학 : <input type="text" id="math"><br>
+	<button id="btnAdd">추가</button>
+	<table id="tb" border="1" width="80%">
+		<tr>
+			<th>이름</th>
+			<th>국어</th>
+			<th>영어</th>
+			<th>수학</th>
+			<th>총점</th>
+			<th>평균</th>
+		</tr>
+	</table>
+</body>
+</html>

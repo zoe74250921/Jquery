@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	var item1 = ["동물", "과일","채소"];
+	var item2 = [["사자", "호랑이","고양이"],["딸기","체리","복숭아"],["토마토","감자","양파"]];
+	$.each(item1,function(idx,item){
+		var option = $("<option></option>").html(item);
+		$("#item1").append(option);
+	});
+	
+	$("#item1").change(function () {
+		var val = $(this).val();
+		//var val = $("#item").val();
+		//var val = $("#item > option:selected").val();
+		var arr;
+		switch(val){
+			case "동물":arr = item2[0]; break;
+			case "과일":arr = item2[1]; break;
+			case "채소":arr = item2[2]; break;
+		}
+		$("#item2").empty();
+		$.each(arr,function(idx,item){
+			var option = $("<option></option>").html(item);
+			$("#item2").append(option);
+		});
+	});
+});
+</script>
+</head>
+<body>
+	<select id="item1"></select>
+	<select id="item2"></select>
+</body>
+</html>

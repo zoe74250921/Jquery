@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	var pro = function () {
+		var list = ["돈까스", "칼국수", "햄버거", "피자", "김밥"];
+		var str = "";
+		str += "<ul>";
+		for (var i = 0; i < list.length; i++) {
+			str += "<li>"+list[i]+"</li>";
+		}
+		str += "</ul>";
+		
+		document.getElementById("result").innerHTML = str;
+	}
+	
+	var pro2 = function () {
+		document.getElementById("result").innerHTML = "";
+	}
+	
+</script>
+</head>
+<body>
+<h2>직장인이 선호하는 점심 메뉴 Top5</h2>
+<div id="result"></div>
+<button onclick="pro()">동적 노드 추가</button>
+<button onclick="pro2()">지우기</button>
+</body>
+</html>

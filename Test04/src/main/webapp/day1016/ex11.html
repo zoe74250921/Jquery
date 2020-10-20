@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#btn").click(function () {
+			var arr = $("input[type=text]");
+			var tr = $("<tr></tr>");
+			$.each(arr, function (idx,item) {
+				$(tr).append($("<td></td>").html($(this).val()));
+				$("table").append(tr);
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<table border="1" width="80%">
+		<tr>
+			<th>이름</th>
+			<th>나이</th>
+			<th>주소</th>
+		</tr>
+	</table>
+	<hr>
+	이름: <input type="text"><br>
+	나이: <input type="text"><br>
+	주소: <input type="text"><br>
+	<input id="btn" type="button" value="등록">
+</body>
+</html>

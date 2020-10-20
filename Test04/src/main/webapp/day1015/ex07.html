@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function(){
+	document.getElementById("myForm").onsubmit = function(){
+		//alert("ok");
+		
+		var name = document.getElementById("name").value;
+		var age = document.getElementById("age").value;
+		
+		
+		name = name.trim();
+		age = age.trim();
+		
+		if(name.length == 0){
+			alert("이름을 입력하세요!");
+			return false;
+		}
+		
+		if( age == "" ){
+			alert("나이를 입력하세요!");
+			return false;
+		}
+		
+		if(isNaN(age)){
+			alert("나이는 숫자로 입력하세요!");
+			return false;
+		}
+		
+		return true;
+	}
+	/*
+	document.getElementById("move").onclick = function(){
+		alert("안가요!");
+		return false;
+	}*/
+	
+	document.getElementById("move").onclick = function(event){
+		event.preventDefault();
+	}
+}
+</script>
+</head>
+<body>
+	<form id="myForm" action="/insertMember.do" method="post">
+		이름 : <input type="text" name="name" id="name"><br>
+		나이 : <input type="text" name="age" id="age"><br>
+		<input type="submit" value="확인">
+	</form>
+	
+	<hr>
+	<a id="move" href="http://www.naver.com">네이버로 이동</a>
+	
+	
+</body>
+</html>
+
+
+
+
+
+

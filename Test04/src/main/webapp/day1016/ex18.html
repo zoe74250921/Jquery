@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("button").click(function () {
+		$("tr").css("background","white");
+		var search = $("#search").val();
+		$("tr:contains("+search+")").css("background","pink");
+	})
+});
+</script>
+</head>
+<body>
+	<table width="80%">
+		<tr><th>이름</th><th>나이</th><th>주소</th></tr>
+		<tr><td>죠니</td><td>28</td><td>일산</td></tr>
+		<tr><td>효니</td><td>25</td><td>일산</td></tr>
+		<tr><td>망갱</td><td>28</td><td>강릉</td></tr>
+		<tr><td>광냔</td><td>22</td><td>일산</td></tr>
+		<tr><td>나용</td><td>28</td><td>일산</td></tr>
+		<tr><td>줄리</td><td>6</td><td>일산</td></tr>
+	</table>
+	<hr>
+	<input type="search" id="search">
+	<button>검색</button>
+
+</body>
+</html>

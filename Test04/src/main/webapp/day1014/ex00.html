@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	var news = "애플이 첫 5G 아이폰을 내놓은 가운데, 5G 스마트폰을 둘러싼 시장의 지각 변동이 예상된다.";
+	$(function () {
+		var n = 1;
+		setInterval(function(){
+			$("#out").val(news.substr(0,n++));
+			//substr은 글자를 1글자씩 가져온다.
+			if(n >= news.length){
+				n=0;
+			}
+		}, 200);
+	});
+</script>
+</head>
+<body>
+	<input id="out" type="text" size="100">
+</body>
+</html>

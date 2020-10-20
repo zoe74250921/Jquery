@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//지우기 버튼을 누르면 h1노드가 삭제되도록
+	/*window.onload = function () {
+		document.getElementById("btn").onclick = function () {
+			alert("ok");
+		}
+	}*/
+	window.onload = function () {
+		document.getElementsByTagName("button")[0].onclick = function () {
+			var h1 = document.getElementById("h1");
+			var p = h1.parentNode;
+			
+			p.removeChild(h1);
+		}
+	}
+	
+</script>
+</head>
+<body>
+	<div id="div">
+		<h1 id="h1">죠니</h1>
+	</div>
+	
+	<button id="btn">지우기</button>
+</body>
+</html>

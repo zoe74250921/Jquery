@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function light_on() {
+		document.getElementById("lamp").src = "on.png";
+	}
+	function light_off() {
+		document.getElementById("lamp").src = "off.png";
+	}
+</script>
+</head>
+<body>
+<img id="lamp" src="off.png">
+<button onclick="light_on()">켜기</button>
+<button onclick="light_off()">끄기</button>
+</body>
+</html>

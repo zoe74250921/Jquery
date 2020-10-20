@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	var arr = [
+		{name:"뚜왕", fname:"cat.jpg"},
+		{name:"왜조래", fname:"cat1.jpg"},
+		{name:"띠용", fname:"cat2.jpg"},
+		{name:"오호리", fname:"cat3.jpg"},
+		{name:"또잉", fname:"cat4.jpg"},];
+	
+	$.each(arr,function(idx,item){
+		var option = $("<option></option>").html(item.name);
+		$("select").append(option);
+	});
+	
+	$("select").change(function () {
+		var idx = $("select > option:selected").index();
+		var fname = arr[idx].fname;
+		$("img").attr("src","../"+fname);
+	})
+});
+</script>
+</head>
+<body>
+	<select></select>
+	<hr>
+	<img src="../cat.jpg" width="500" height="500">
+</body>
+</html>

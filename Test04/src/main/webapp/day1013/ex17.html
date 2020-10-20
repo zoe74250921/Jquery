@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" >
+	window.onload = function () {
+		document.getElementById("add").onclick = function () {
+			var h2 = document.createElement("h2")
+			var tx = document.createTextNode("Hello!!")
+			h2.appendChild(tx)
+			document.getElementById("re").appendChild(h2)
+		}
+		
+		document.getElementById("img").onclick = function () {
+			var img = document.createElement("img")
+			img.src = "../cat.jpg"
+			img.width = 200
+			img.height = 200
+			document.getElementById("re").appendChild(img)
+		}
+	}
+</script>
+</head>
+<body>
+	<hr>
+	<div id="re"></div>
+	<hr>
+	<button id="add">노드추가</button><br>
+	<button id="img">이미지노드추가</button>
+</body>
+</html>

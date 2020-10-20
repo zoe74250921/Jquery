@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(function () {
+		$.each(window, function (idx,v) {
+			var li = $("<li></li>").html(idx+"==>"+v)
+			$("#list").append(li)
+		})
+	})
+</script>
+</head>
+<body>
+	<ul id="list"></ul>
+</body>
+</html>

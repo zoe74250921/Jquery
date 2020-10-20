@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("h1").click(function () {
+		$("p").html($(this).html());
+	});
+	
+	/*
+	$("h1").bind("click",function(){
+		$("p").html($(this).html());
+	});
+	*/
+});
+</script>
+</head>
+<body>
+	<h1>귀여운</h1>
+	<h1>고양이</h1>
+	<h1>도롤리</h1>
+	<hr>
+	<p></p>
+</body>
+</html>

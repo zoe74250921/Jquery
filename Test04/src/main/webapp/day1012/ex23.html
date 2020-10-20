@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function () {
+		document.getElementById("btnAdd").onclick = function () {
+			var a = document.getElementById("num1").value;
+			var b = document.getElementById("num2").value;
+			if (isNaN(a) || isNaN(b)) {
+				alert("숫자를 입력해주세요!");
+				return;
+			}
+			var c = Number(a) + Number(b);
+			document.getElementById("result").innerHTML = c;
+		};
+	}
+</script>
+</head>
+<body>
+
+	수1: <input type="text" id="num1"><br>
+	수2: <input type="text" id="num2"><br>
+	<button id="btnAdd">더하기</button><br>
+	결과: <span id="result"></span>
+	
+</body>
+</html>

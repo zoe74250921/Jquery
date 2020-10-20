@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#btn").click(function () {
+		$(".animal").css("color", "pink");
+	});
+});
+</script>
+</head>
+<body>
+	<ul>
+		<li class="animal">고양이</li>
+		<li class="food">치킨</li>
+		<li class="animal">강아지</li>
+		<li class="food">짜장면</li>
+		<li class="animal">코끼리</li>
+		<li class="food">햄버거</li>
+	</ul>
+	<button id="btn">동물</button>
+</body>
+</html>

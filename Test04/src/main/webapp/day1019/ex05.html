@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.item0{
+	background: yellow;
+}
+.item1{
+	background: green;
+}
+.item2{
+	background: blue;
+}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#add").click(function () {
+		$("h1").addClass(function (idx) {
+			return "item"+idx;
+		});
+	})
+	
+	$("#remove").click(function () {
+		$("h1").removeClass(function (idx) {
+			return "item"+idx;
+		});
+	})
+});
+</script>
+</head>
+<body>
+	<h1>죠니</h1>
+	<h1>효니</h1>
+	<h1>줄리</h1>
+	<button id="add">클래스 추가</button>
+	<button id="remove">클래스 삭제</button>
+</body>
+</html>

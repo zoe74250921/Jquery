@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#btnSet").click(function () {
+		$("input").val("도로록");
+		$("p").text("도롤리");
+	});
+	
+	$("#btnRead").click(function () {
+		var a = $("input").val();
+		alert(a);
+		
+		var b = $("p").text();
+		alert(b);
+	});
+});
+</script>
+</head>
+<body>
+	<input type="text"><br>
+	<p></p>
+	<button id="btnSet">값 설정</button>
+	<button id="btnRead">값 읽어오기</button>
+</body>
+</html>

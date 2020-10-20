@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function () {
+		document.getElementById("btn").onclick = function () {
+			var request = new XMLHttpRequest()
+			request.open("get", "/member",false)
+			request.send()
+			document.getElementById("name").innerHTML = request.responseText
+		}
+	}
+</script>
+</head>
+<body>
+	<h2 id="name"></h2>
+	<button id="btn">Ajax통신</button>
+	<hr>
+	<textarea rows="10" cols="50"></textarea>
+</body>
+</html>

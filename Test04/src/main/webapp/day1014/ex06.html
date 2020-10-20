@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	// jquery에는 노드 삭제를 위한 함수가 2가지가 있어요!
+	// remove()	==> 자기자신을 지워요!
+	// empty()	==> 자식들을 모두 지워요!
+	
+	// jquery를 적용하여 "지우기"버튼을 누르면 h1노드가 삭제되도록 해봅니다
+	
+	$(function () {
+		$("#btn").click(function () {
+			$("#h1").remove();
+		})
+	})
+</script>
+</head>
+<body>
+	<div id="div">
+		<h1 id="h1">죠니</h1>
+	</div>
+	
+	<button id="btn">지우기</button>
+</body>
+</html>

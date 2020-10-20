@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(function () {
+		var new_window;
+		$("#btnNew").click(function () {
+			new_window = window.open("", "", "width=600,height=500")
+		})
+		
+		$("#btnAdd").click(function () {
+			new_window.document.write("<h2>Hello!</h2>")
+		})
+	})
+</script>
+</head>
+<body>
+	<button id="btnNew">새 창</button>
+	<button id="btnAdd">노드추가</button>
+</body>
+</html>

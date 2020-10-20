@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#btnRead").click(function(){
+		$("#bookList").empty();
+		
+		$.ajax("/listBook",{success:function(arr){
+			$.each(arr, function(idx, book){
+				var tr = $("<tr></tr>");
+				var td1= $("<td></td>").html(book.bookid);
+				var td2= $("<td></td>").html(book.bookname);
+				var td3= $("<td></td>").html(book.publisher);
+				var td4= $("<td></td>").html(book.price);
+				$(tr).append(td1,td2,td3,td4);
+				$("#bookList").append(tr);
+			});
+		}});
+	});
+});
+</script>
+</head>
+<body>
+	<table >
+		<thead>
+		<tr>
+			<th>도서번호</th>
+			<th>도서명</th>
+			<th>출판사</th>
+			<th>가격</th>
+		</tr>
+		</thead>
+		<tbody id="bookList"></tbody>
+	</table>
+	<hr>
+	<button id="btnRead">데이터 읽어오기</button>
+</body>
+</html>

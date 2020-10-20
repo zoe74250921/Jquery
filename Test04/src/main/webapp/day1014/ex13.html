@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(function () {
+		$("#btnAdd").click(function () {
+			var name = $("#name").val();
+			var age = $("#age").val();
+			var addr = $("#addr").val();
+			
+			var td1 = $("<td></td>").html(name);
+			var td2 = $("<td></td>").html(age);
+			var td3 = $("<td></td>").html(addr);
+			
+			var tr = $("<tr></tr>");
+			$(tr).append(td1);
+			$(tr).append(td2);
+			$(tr).append(td3);
+			
+			$("#tb").append(tr);
+			
+			$(tr).dblclick(function(){
+				$(this).remove();
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	이름: <input type="text" id="name">
+	나이: <input type="text" id="age">
+	주소: <input type="text" id="addr">
+	<button id="btnAdd">추가</button>
+	<table border="1" width="80%" id="tb">
+		<tr>
+			<th>이름</th>
+			<th>나이</th>
+			<th>주소</th>
+		</tr>
+	</table>
+</body>
+</html>

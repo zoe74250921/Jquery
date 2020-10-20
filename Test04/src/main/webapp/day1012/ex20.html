@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	window.onload = function () {
+		var date = new Date();
+		var hour = date.getHours();
+		if (hour<18) {
+			document.getElementById("img").src="sun.png";
+		}else {
+			document.getElementById("img").src="moon.png";
+		}
+	}
+	
+</script>
+</head>
+
+<body>
+<img id="img">
+
+</body>
+</html>

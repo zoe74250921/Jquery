@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function nextRandomInteger( limit  ){
+	return  Math.round(Math.random() * limit);
+} 
+
+var alphabet = "ABCDEFGHIJKLMNLPQRSTUVWXYZ";
+var color_list = ["red","green","blue","yellow","pink","black"];
+
+function randomAlaphabet(){
+	return 	alphabet.charAt( nextRandomInteger(25));
+}
+
+function randomSpeed(maxSpeed){
+	return Math.random() * maxSpeed - Math.random() * maxSpeed;
+}
+
+var canvasWidth = 700;
+var canvasHeight = 500;
+
+function MovingText(){	
+	this.x = nextRandomInteger(canvasWidth);
+	this.y = nextRandomInteger(canvasHeight);
+	this.vX = randomSpeed(10);
+	this.vY = randomSpeed(10);
+	
+	this.body = document.createElement("h1");
+	this.body.innerHTML = randomAlaphabet();
+	this.body.style.position = "absolute";
+	this.body.style.color = 
+	color_list[ nextRandomInteger(color_list.length-1) ];
+	//this.body.style.color = 
+	//		nextRandomInteger( color_list.length-1 );
+	
+	document.body.appendChild(this.body);
+}
+
+MovingText.prototype.move = function(){
+	
+	if(this.x <0 || this.x > canvasWidth){
+		this.vX *= -1;
+	}
+	
+	if(this.y <0 || this.y > canvasHeight){
+		this.vY *= -1;
+	}
+	
+	this.x += this.vX;
+	this.y += this.vY;
+	
+	this.body.style.left = this.x + "px";
+	this.body.style.top = this.y + "px";
+}
+
+
+window.onload = function(){
+	var arr = [];
+	for(i=0;i<100;i++){
+		arr.push( new  MovingText() );
+	}
+
+	
+	setInterval( function(){
+		for(var i=0; i<arr.length; i++){
+			arr[i].move();
+		}
+	}  ,1000/60 );
+}
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

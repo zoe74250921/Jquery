@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	
+	var arr = [
+		{bookid:"8", bookname:"야구를 부탁해", publisher:"이상미디어", price:"13500"},
+		{bookid:"9", bookname:"올림픽 이야기", publisher:"삼성당", price:"21000"},
+		{bookid:"10", bookname:"축구왕", publisher:"축구협회", price:"9500"}
+	]
+	
+	$(function () {
+		$("#btn").click(function () {
+			$.each(arr, function (row,item) {
+				var tr = $("<tr></tr>")
+				$.each(item, function (idx,v) {
+					var td = $("<td></td>").text(v)
+					$(tr).append(td)
+				})
+				$("#list").append(tr)
+			})
+		})
+	})
+	
+	
+</script>
+</head>
+<body>
+	<table id="list" border="1" width="80%">
+		<tr>
+			<td>도서번호</td>
+			<td>도서명</td>
+			<td>출판사</td>
+			<td>가격</td>
+		</tr>
+	</table>
+	<hr>
+	<button id="btn">도서정보 확인</button>
+</body>
+</html>

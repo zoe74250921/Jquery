@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+*{
+	margin: 0px;
+	padding: 0px;
+}
+div{
+	margin: 5px;
+	padding: 3px;
+	
+	border: 3px solid black;
+	border-radius: 10px;
+}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("div").click(function () {
+		//var name = $("h1",this).text();
+		var name = $(this).find("h1").text();
+		//var addr = $("p",this).text();
+		var addr = $(this).find("p").text();
+		alert(name + "\n" + addr)
+	});
+});
+</script>
+</head>
+<body>
+	<div>
+		<h1>지효니</h1>
+		<p>일산서구 일산3동</p>
+	</div>
+	<div>
+		<h1>나용이</h1>
+		<p>일산동구 성석동</p>
+	</div>
+	<div>
+		<h1>미요니</h1>
+		<p>일산동구 마두1동</p>
+	</div>
+	
+</body>
+</html>

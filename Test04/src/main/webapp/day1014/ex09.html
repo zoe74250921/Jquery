@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(function () {
+		$("#btnAdd").click(function () {
+			var name = eval($("#name").val());
+			var kor = eval($("#kor").val());
+			var eng = eval($("#eng").val());
+			var math = eval($("#math").val());
+			var tot = kor + eng + math;
+			var avg = tot/3;
+			
+			var td_name = $("<td></td>").html(name);
+			var td_kor = $("<td></td>").html(kor);
+			var td_eng = $("<td></td>").html(eng);
+			var td_math = $("<td></td>").html(math);
+			var td_tot = $("<td></td>").html(tot);
+			var td_avg = $("<td></td>").html(avg);
+			
+			var tr = $("<tr></tr>");		
+			$(tr).append(td_name,td_kor,td_eng,td_math,td_tot,td_avg);
+			$("#tb").append(tr);
+
+		});
+	});
+</script>
+</head>
+<body>
+	이름 : <input type="text" id="name"><br>
+	국어 : <input type="text" id="kor"><br>
+	영어 : <input type="text" id="eng"><br>
+	수학 : <input type="text" id="math"><br>
+	<button id="btnAdd">추가</button>
+	<table id="tb" border="1" width="80%">
+		<tr>
+			<th>이름</th>
+			<th>국어</th>
+			<th>영어</th>
+			<th>수학</th>
+			<th>총점</th>
+			<th>평균</th>
+		</tr>
+	</table>
+</body>
+</html>

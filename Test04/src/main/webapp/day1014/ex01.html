@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	var arr = [
+		"애플이 첫 5G 아이폰을 내놓은 가운데, 5G 스마트폰을 둘러싼 시장의 지각 변동이 예상된다.",
+		"아이폰12는 애플이 처음 내놓은 5G 스마트폰이다.",
+		"아이폰의 새 시대가 시작되는 날이라고 말하며 첫 5G 아이폰에 기대감을 드러냈다.",
+		"5G 적용으로 아이폰은 다운로드와 업로드, 고화질 동영상 스트리밍, 더 빠르게 반응하는 게임 등에 있어 다른 차원의 성능을 발휘할 것이라고 말했다.",
+		"애플은 이달 말부터 아이폰12를 출시하며 북미, 서유럽, 일본 등을 중심으로 5G 고객을 늘려 나갈 계획이다."
+	];
+	
+	$(function () {
+		var n = 1; //글자수를 위한 변수
+		var i = 0; //배열의 인덱스를 위한 변수
+		setInterval(function(){
+			var news = arr[i];
+			$("#out").val(news.substr(0,n++));
+			if(n >= news.length){
+				n=0;
+				i++;
+			}
+			if(i >= arr.length){
+				i=0;
+			}
+		}, 200);
+	});
+</script>
+</head>
+<body>
+	<input id="out" type="text" size="100">
+</body>
+</html>

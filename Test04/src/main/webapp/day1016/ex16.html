@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+   $("tr:odd").css("background","#f9f9f9");
+   $("tr:even").css("background","#9f9f9f");
+   //$("tr:first").css("background","#000000").css("color","#ffffff");
+   $("tr:first").css({background:"#000000",color:"#ffffff"});
+});
+</script>
+</head>
+<body align="center">
+   <table width="80%">
+      <tr><th>이름</th><th>나이</th><th>주소</th></tr>
+      <tr><td>홍길동</td><td>20</td><td>서울</td></tr>
+      <tr><td>홍길동</td><td>20</td><td>서울</td></tr>
+      <tr><td>홍길동</td><td>20</td><td>서울</td></tr>
+      <tr><td>홍길동</td><td>20</td><td>서울</td></tr>
+      <tr><td>홍길동</td><td>20</td><td>서울</td></tr>
+      <tr><td>홍길동</td><td>20</td><td>서울</td></tr>
+   </table>
+</body>
+</html>

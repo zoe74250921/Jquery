@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//$("tr").css("background-color","yellow");
+	
+	var selTr;	
+	
+	$("#btnAdd").click(function(){
+		var name = $("#name").val();
+		var age = $("#age").val();
+		var addr = $("#addr").val();
+		
+		var td1 = $("<td></td>").html(name);
+		var td2 = $("<td></td>").html(age);
+		var td3 = $("<td></td>").html(addr);
+		
+		var tr = $("<tr></tr>");
+		$(tr).append(td1);
+		$(tr).append(td2);
+		$(tr).append(td3);
+		
+		$("#tb").append(tr);
+		
+		$(tr).click(function(){
+			$("tr").css("background-color","white");
+			$(this).css("background-color","yellow");
+			selTr = $(this);
+			
+			var list = $(this).find("td");
+			$("#name").val($(list[0]).text());
+			$("#age").val($(list[1]).text());
+			$("#addr").val($(list[2]).text());
+
+			
+		});
+		
+	}); //btnAdd의 끝
+	
+	
+	$("#btnDel").click(function(){
+		$(selTr).remove();
+	});
+	
+	$("#btnUpd").click(function(){
+		var list = $(selTr).find("td");
+		$(list[0]).html($("#name").val());
+		$(list[1]).html($("#age").val());
+		$(list[2]).html($("#addr").val());
+
+	});
+	
+});
+</script>
+</head>
+<body>
+이름 : <input type="text" id="name"><br>
+나이 : <input type="text" id="age"><br>
+주소 : <input type="text" id="addr"><br>
+<button id="btnAdd">등록</button>
+<button id="btnDel">삭제</button>
+<button id="btnUpd">수정</button>
+
+<table id="tb" border="1" width="80%">
+	<tr>
+		<th>이름</th>
+		<th>나이</th>
+		<th>주소</th>
+	</tr>
+</table>
+
+
+</body>
+</html>

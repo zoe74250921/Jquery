@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" >
+	$(function () {
+		$("#btnCss").click(function () {
+			/*
+			$("#header").css("color","pink")
+			$("#header").css("border","2px solid black")
+			$("#header").css("fontFamily","맑은 고딕")
+			*/
+			$("#header").css({
+				color:"blue",
+				border:"2px solid pink",
+				fontFamily:"맑은 고딕"
+			})
+			
+		})
+	})
+</script>
+</head>
+<body>
+	<h2 id="header">보고싶다 줄리야~~~</h2>
+	<button id="btnCss">스타일 바꾸기</button>
+</body>
+</html>
